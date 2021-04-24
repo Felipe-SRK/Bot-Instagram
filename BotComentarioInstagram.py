@@ -3,9 +3,6 @@ from selenium.webdriver.common.keys import Keys
 import time
 import random
 
-# Fiz algumas modificações
-
-
 class InstagramBot:
     def __init__(self, username, password):
         self.username = username
@@ -14,11 +11,8 @@ class InstagramBot:
         firefoxProfile.set_preference("intl.accept_languages", "pt,pt-BR")
         firefoxProfile.set_preference("dom.webnotifications.enabled", False)
         self.driver = webdriver.Firefox(
-            firefox_profile=firefoxProfile, executable_path=r"./geckodriver"
+            firefox_profile=firefoxProfile, executable_path=r"./Users/felipesilva/Downloads/geckodrive"
         )
-        """ # Coloque o caminho para o seu geckodriver aqui, lembrando que você precisa instalar o firefox e geckodriver na versão mais atual """
-        # Link download do geckodriver: https://github.com/mozilla/geckodriver/releases
-        # Link download Firefox https://www.mozilla.org/pt-BR/firefox/new/
 
     def login(self):
         driver = self.driver
@@ -43,11 +37,10 @@ class InstagramBot:
         time.sleep(5)
         self.comente_nas_fotos_com_a_hashtag(
             "Eu quero"
-        )  # Altere aqui para a hashtag que você deseja usar.
+        )
 
     @staticmethod
     def type_like_a_person(sentence, single_input_field):
-        """ Este código irá basicamente permitir que você simule a digitação como uma pessoa """
         print("going to start typing message into message share text area")
         for letter in sentence:
             single_input_field.send_keys(letter)
@@ -60,7 +53,7 @@ class InstagramBot:
         time.sleep(5)
         for i in range(
             1, 3
-        ):  # Altere o segundo valor aqui para que ele desça a quantidade de páginas que você quiser: quer que ele desça 5 páginas então você deve alterar de range(1,3) para range(1,5)
+        ):
             driver.execute_script(
                 "window.scrollTo(0, document.body.scrollHeight);")
             time.sleep(3)
@@ -81,7 +74,7 @@ class InstagramBot:
             try:
                 comments = [
                     "Eu quero",
-                ]  # Remova esses comentários e insira os seus comentários aqui
+                ]
                 driver.find_element_by_class_name("Ypffh").click()
                 comment_input_box = driver.find_element_by_class_name("Ypffh")
                 time.sleep(random.randint(2, 5))
@@ -97,6 +90,5 @@ class InstagramBot:
                 time.sleep(5)
 
 
-# Entre com o usuário e senha aqui
 felipebot = InstagramBot("fe_srk", "fs210698")
 felipebot.login()
