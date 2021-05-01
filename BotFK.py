@@ -47,7 +47,10 @@ class InstagramBot:
     def comente_nas_fotos_com_a_hashtag(self, hashtag):
         links_de_posts = []
         driver = self.driver
-        driver.get("https://www.instagram.com/p/CN-_cOCoXJ6/")
+        #driver.get("https://www.instagram.com/p/CN-_cOCoXJ6/")#Sorteio PC
+        #driver.get("https://www.instagram.com/p/CNxXVgjHYtG/")#Sorteio Switch
+        #driver.get("https://www.instagram.com/p/COS1yvhjoLG/")#Sorteio PS4
+        
         time.sleep(2)
 
         driver.execute_script(
@@ -87,5 +90,5 @@ class InstagramBot:
 
 
 # Entre com o usuário e senha aqui
-felipebot = InstagramBot("user", "senha")
+felipebot = InstagramBot("fe_srk", "fs210698")
 felipebot.login()
