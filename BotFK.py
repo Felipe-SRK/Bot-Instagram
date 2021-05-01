@@ -90,5 +90,5 @@ class InstagramBot:
 
 
 # Entre com o usuário e senha aqui
-felipebot = InstagramBot("fe_srk", "fs210698")
+felipebot = InstagramBot("usuarui", "senha")
 felipebot.login()
